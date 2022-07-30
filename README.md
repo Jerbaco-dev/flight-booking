@@ -12,8 +12,10 @@ v 0.2 | Jeroen Branders | Tracking progress and described what I learned in the 
 2) Learn some routing and creating components
    ```javascript
         npx ng g c book-flights --module app
+        npx ng-openapi-gen
     ```
 3) Create first HTML style in Angular component
+4) Automatic generation of Open API classes in Angular 
 
 ## Day 04 - Day 07
 1) Generate Open API - Configuration in Swahbuckle
