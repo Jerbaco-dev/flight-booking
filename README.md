@@ -49,4 +49,9 @@ v 0.2 | Jeroen Branders | Tracking progress and described what I learned in the 
 4) Post form and create find method
 5) Usaged of CreatedAtAction mehtod in Asp.net core Web API.
 
+## Day 10
+1) Learning how to create a service in Angular (AuthService)
+2) Use arrow function
+3) Make some navigation to register / login page.
+
 https://github.com/tutorialseu/ang-asp-21dc-flight-booking-portal
