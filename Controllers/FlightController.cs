@@ -1,5 +1,6 @@
 ﻿using Jerbaco.Flights.ReadModels;
 using Microsoft.AspNetCore.Mvc;
+using Jerbaco.Flights.Dtos;
 
 namespace Jerbaco.Flights.Controllers
 {
@@ -61,6 +62,8 @@ namespace Jerbaco.Flights.Controllers
                 random.Next(1, 853))
         };
 
+        private static IList<BookDto> Bookings = new List<BookDto>();
+
         public FlightController(ILogger<FlightController> logger)
         {
             _logger = logger;
@@ -85,6 +88,24 @@ namespace Jerbaco.Flights.Controllers
                 return NotFound();
 
             return Ok(flight);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public IActionResult Book(BookDto dto)
+        {
+            System.Diagnostics.Debug.WriteLine($"Booking a new flight {dto.FlightId}");
+
+            var flightFound = flights.Any(f => f.Id == dto.FlightId);
+
+            if (!flightFound)
+                return NotFound();
+            
+            Bookings.Add(dto);
+            return CreatedAtAction(nameof(Find), new {id = dto.FlightId});
         }
     }
 }

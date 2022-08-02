@@ -6,6 +6,7 @@ Version      | Autor        | Comments                 |
 ------------ | -------------|--------------------------|
 v 0.1 | Jeroen Branders  | Initial version of this Repo
 v 0.2 | Jeroen Branders | Tracking progress and described what I learned in the Challenge
+v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angular
 
 ## Day 01 - Day 04 challenge
 1) Learning the basic of ASP.NET core and Angular
@@ -78,5 +79,9 @@ v 0.2 | Jeroen Branders | Tracking progress and described what I learned in the 
 
         }     
    ```
+## Day 11
+1) Creating new components like Book a Fight and My Bookings
+2) Add some global CSS and header and footer styling
 
-https://github.com/tutorialseu/ang-asp-21dc-flight-booking-portal
+## Coming up some data validation
+more to come =)

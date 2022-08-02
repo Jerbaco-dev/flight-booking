@@ -27,6 +27,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\assets\images\plane.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\assets\images\plane.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\app\auth\" />
   </ItemGroup>
 
