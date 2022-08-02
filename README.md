@@ -82,6 +82,7 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
 ## Day 11
 1) Creating new components like Book a Fight and My Bookings
 2) Add some global CSS and header and footer styling
+![image-progress](https://user-images.githubusercontent.com/78689165/182468280-5bbf049a-c75a-4303-9a05-ae94adf130fd.png)
 
 ## Coming up some data validation
 more to come =)
