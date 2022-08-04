@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Jerbaco.Flights.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Jerbaco.Flights.Dtos;
 using Jerbaco.Flights.ReadModels;
@@ -10,7 +11,7 @@ namespace Jerbaco.Flights.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private static IList<NewPassengerDto> Passengers = new List<NewPassengerDto>();
+        private static IList<Passenger> Passengers = new List<Passenger>();
 
         [HttpPost]
         [ProducesResponseType(201)]
@@ -18,7 +19,12 @@ namespace Jerbaco.Flights.Controllers
         [ProducesResponseType(500)]
         public IActionResult Register(NewPassengerDto dto)
         {
-            Passengers.Add(dto);
+            Passengers.Add(new Passenger(
+                dto.Email,
+                dto.FirstName,
+                dto.Lastname,
+                dto.Gender));
+
             System.Diagnostics.Debug.WriteLine(Passengers.Count);
 
             return CreatedAtAction(nameof(Find), new { email = dto.Email });

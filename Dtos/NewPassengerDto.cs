@@ -1,8 +1,13 @@
-﻿namespace Jerbaco.Flights.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Jerbaco.Flights.Dtos
 {
     public record NewPassengerDto(
+        [Required][EmailAddress][StringLength(100, MinimumLength = 3)] 
         string Email,
+        [Required][MinLength(2)][MaxLength(35)] 
         string FirstName,
+        [Required][MinLength(2)][MaxLength(35)] 
         string Lastname,
-        bool Gender);
+        [Required] bool Gender);
 }

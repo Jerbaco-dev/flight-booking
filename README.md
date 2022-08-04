@@ -84,5 +84,13 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
 2) Add some global CSS and header and footer styling
 ![image-progress](https://user-images.githubusercontent.com/78689165/182468280-5bbf049a-c75a-4303-9a05-ae94adf130fd.png)
 
+## Day 12 - Day 13
+1) Learning about Validation on Server side
+2) Learning form Angular validation and messages
+3) What is dirty / touched attributes in Angular?
+[image]
+4) Learn about Domain Logic and created entities for the Domain
+5) Return Readmodels instead of Entities
+
 ## Coming up some data validation
 more to come =)
