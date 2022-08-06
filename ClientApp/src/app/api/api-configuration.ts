@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiConfiguration {
-  rootUrl: string = 'https://localhost:44321';
+  //rootUrl: string = 'https://localhost:44321';
+  rootUrl: string = 'https://fligh-demo.azurewebsites.net/';
 }
 
 /**
