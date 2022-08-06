@@ -86,7 +86,9 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
 1) Learning about Validation on Server side
 2) Learning form Angular validation and messages
 3) What is dirty / touched attributes in Angular?
+
 ![dirty-touch](https://user-images.githubusercontent.com/78689165/182949172-af4f8df4-a78c-4847-8203-18d0e849a0ca.png)
+
 4) Learn about Domain Logic and created entities for the Domain
 5) Return Readmodels instead of Entities
 
