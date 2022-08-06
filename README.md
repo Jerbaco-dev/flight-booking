@@ -70,8 +70,6 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
             console.log("Log in the user with email " + user.email);
             this.currentUser = user;
           }
-
-
         }
 
         interface User {
@@ -91,6 +89,13 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
 ![dirty-touch](https://user-images.githubusercontent.com/78689165/182949172-af4f8df4-a78c-4847-8203-18d0e849a0ca.png)
 4) Learn about Domain Logic and created entities for the Domain
 5) Return Readmodels instead of Entities
+
+## Day 14 - Day 15
+1) Domain Rule Validation 
+   Protecting frontend and backend for malicious and abuse use of it.
+   Domain -> flight booking (other wordt Business use case)
+          -> Flight with 100 seats completely booked -> can not book again (overbooking => business specific)
+2) 
 
 ## Coming up some data validation
 more to come =)
