@@ -3,6 +3,7 @@ using Jerbaco.Flights.ReadModels;
 using Microsoft.AspNetCore.Mvc;
 using Jerbaco.Flights.Dtos;
 using Jerbaco.Flights.Domain.Errors;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jerbaco.Flights.Controllers
 {
@@ -79,6 +80,15 @@ namespace Jerbaco.Flights.Controllers
 
             if (error is OverbookError)
                 return Conflict(new {message = "Not enough seats available."});
+
+            try
+            {
+                _entities.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                return Conflict(new { message = "An error occurred while booking. Please try again." });
+            }
 
             return CreatedAtAction(nameof(Find), new { id = dto.FlightId });
         }

@@ -99,7 +99,33 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
           -> Flight with 100 seats completely booked -> can not book again (overbooking => business specific)
 2) Creating new entities for persistence of data
 3) Dependency injection introduction - build-in ones for .NET Core >=6.0
-4) 
+
+## Day 16 - Day 17
+1) Add package EntityFrameworkCore.InMemory
+   ```PowerShell
+      Install-Package Microsoft.EntityFrameworkCore.InMemory
+   ```
+2) Convert entities to dbsets<> and use them in the application
+3) Entity framework error handeling
+4) Program file added lines
+   ```C#
+      // Add db context
+      builder.Services.AddDbContext<Entities>(options =>
+      options.UseInMemoryDatabase(databaseName: "Flights"),
+      ServiceLifetime.Singleton);
+
+      builder.Services.AddSingleton<Entities>();
+
+      var app = builder.Build();
+
+      SeedService.Seeding(app);
+   ```
+4) Race Conditions (Concurrency) -> both booking for 1 seat.
+    - Concurrency token
+    - Handle DBUpdateConcurrencyException
+    - Seat is overbookend now how we can avoid it?
+
+
 
 ## Coming up some data validation
 more to come =)

@@ -61,7 +61,9 @@ namespace Jerbaco.Flights
             new TimePlace("Zagreb", DateTime.Now.AddHours(random.Next(4, 60))),
             random.Next(1, 853))
             };
+
             entities.Flights.AddRange(flightsToSeed);
+            entities.SaveChanges();
         }
     }
 }

@@ -1,9 +1,14 @@
 using Jerbaco.Flights;
 using Jerbaco.Flights.Data;
-using Jerbaco.Flights.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add db context
+builder.Services.AddDbContext<Entities>(options =>
+        options.UseInMemoryDatabase(databaseName: "Flights"),
+        ServiceLifetime.Singleton);
 
 // Add services to the container.
 
