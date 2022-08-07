@@ -1,3 +1,6 @@
+using Jerbaco.Flights;
+using Jerbaco.Flights.Data;
+using Jerbaco.Flights.Domain.Entities;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +19,11 @@ builder.Services.AddSwaggerGen(c =>
     c.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["action"] + e.ActionDescriptor.RouteValues["controller"]}");
 });
 
+builder.Services.AddSingleton<Entities>();
+
 var app = builder.Build();
+
+SeedService.Seeding(app);
 
 app.UseCors(builder => builder
     .WithOrigins("*")

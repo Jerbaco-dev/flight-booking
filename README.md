@@ -97,7 +97,9 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
    Protecting frontend and backend for malicious and abuse use of it.
    Domain -> flight booking (other wordt Business use case)
           -> Flight with 100 seats completely booked -> can not book again (overbooking => business specific)
-2) 
+2) Creating new entities for persistence of data
+3) Dependency injection introduction - build-in ones for .NET Core >=6.0
+4) 
 
 ## Coming up some data validation
 more to come =)

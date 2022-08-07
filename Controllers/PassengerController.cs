@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Jerbaco.Flights.Dtos;
 using Jerbaco.Flights.ReadModels;
+using Jerbaco.Flights.Data;
 
 namespace Jerbaco.Flights.Controllers
 {
@@ -11,7 +12,15 @@ namespace Jerbaco.Flights.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private static IList<Passenger> Passengers = new List<Passenger>();
+        private readonly ILogger<PassengerController> _logger;
+        private readonly Entities _entities;
+
+        public PassengerController(ILogger<PassengerController> logger, 
+            Entities entities)
+        {
+            _logger = logger;
+            _entities = entities;
+        }
 
         [HttpPost]
         [ProducesResponseType(201)]
@@ -19,13 +28,13 @@ namespace Jerbaco.Flights.Controllers
         [ProducesResponseType(500)]
         public IActionResult Register(NewPassengerDto dto)
         {
-            Passengers.Add(new Passenger(
+            _entities.Passengers.Add(new Passenger(
                 dto.Email,
                 dto.FirstName,
                 dto.Lastname,
                 dto.Gender));
 
-            System.Diagnostics.Debug.WriteLine(Passengers.Count);
+            System.Diagnostics.Debug.WriteLine(_entities.Passengers.Count);
 
             return CreatedAtAction(nameof(Find), new { email = dto.Email });
         }
@@ -36,7 +45,7 @@ namespace Jerbaco.Flights.Controllers
         [ProducesResponseType(500)]
         public ActionResult<PassengerRm> Find(string email)
         {
-            var passenger = Passengers.FirstOrDefault(p => p.Email == email);
+            var passenger = _entities.Passengers.FirstOrDefault(p => p.Email == email);
 
             if (passenger == null) return NotFound();
 
