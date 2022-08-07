@@ -124,7 +124,9 @@ v 1.1 | Jeroen Branders | Track progress on learning - Keep up-to-date with Angu
     - Concurrency token
     - Handle DBUpdateConcurrencyException
     - Seat is overbookend now how we can avoid it?
-
+  ![foto1](https://user-images.githubusercontent.com/78689165/183310955-49675cc6-6e5c-4593-bbc2-53c4b1507ad2.png)
+  
+  ![notbooked](https://user-images.githubusercontent.com/78689165/183310963-bc0c5091-8f59-4ed9-b9f3-e6e49868e8f2.png)
 
 
 ## Coming up some data validation
